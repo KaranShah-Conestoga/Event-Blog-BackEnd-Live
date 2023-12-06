@@ -1,0 +1,1146 @@
+{
+	"info": {
+		"_postman_id": "738e2a00-a3fd-474d-a382-79335941f98d",
+		"name": "Learning nodejs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "create task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"OM\",\r\n    \"lastName\": \"Shah\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/tasks",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get task by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/tasks/63215b3eb8b814207dd702e2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								"63215b3eb8b814207dd702e2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update task by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Shiva\",\r\n    \"lastName\": \"Shah\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/tasks/63215b3eb8b814207dd702e2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								"63215b3eb8b814207dd702e2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/tasks/63215b3eb8b814207dd702e2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								"63215b3eb8b814207dd702e2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get task",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/tasks/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"tasks",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "All user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"Searchby\":\"\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User  post and report year Count",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"year\":\"\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/userpostcount",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"userpostcount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get post count with user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/admin/postcount",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"postcount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user with their total likes and views",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/admin/user/likeviews/count",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"likeviews",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User month Count",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"month\":\"\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/usercount",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"usercount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Block user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"Searchby\":\"\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/blockusers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"blockusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "repoted post with total report",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/admin/repotedpost",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"repotedpost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update post status after review by postId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/admin/repotedpost/632d4ea18793a284d9fe515f",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"repotedpost",
+								"632d4ea18793a284d9fe515f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All user requests to enable their post",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/admin/post/blockpost/req",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"post",
+								"blockpost",
+								"req"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All user requests to enable their Account",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/admin/post/blockaccount/req",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"post",
+								"blockaccount",
+								"req"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Kartik Bhai\",\r\n    \"email\": \"kartik@gmail.com\",\r\n    \"password\":\"Admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign_in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"kshah@gmail.com\",\r\n    \"password\":\"Admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/user/sign_in",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Images\",\r\n    \"description\": \"<p><img src=\\\"&quot;<p><img src=\\\\&quot;https://resources.jetbrains.com/help/img/idea/2022.2/db_preview_pending_changes_icon.png\\\\&quot; alt=\\\\&quot;\\\\&quot; width=\\\\&quot;500px\\\\&quot;><br></p>&quot;\\\" alt=\\\"\\\" width=\\\"300px\\\"><img src=\\\"https://resources.jetbrains.com/help/img/idea/2022.2/db_preview_pending_changes_icon.png\\\" alt=\\\"\\\" width=\\\"1285\\\" height=\\\"557\\\"><br></p>\"\r\n,\r\n    \"createdBy\": \"6322a81ecc2c62339d8d084f\",\r\n    \"tags\": [\"testing\", \"Science\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like post by postId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"likedBy\": \"6322b09c59ad10097dd931d3\",\r\n    \"postId\": \"632d4ea18793a284d9fe515f\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/likepost/632d45d0d12b1a22ad793b21\n",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"likepost",
+								"632d45d0d12b1a22ad793b21\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"633ffc4f07234e9f95e9fcc5\",\r\n    \"parentId\": \"6350e44655a7154b2cfa076b\",\r\n    \"parentCommentId\": \"6350e44655a7154b2cfa076b\",  //not for first comment\r\n    \"comment\": \"testingcsdsccx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/comment",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get  comment by postId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/post/comment/634e7934d7682bef07f51fa6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"comment",
+								"634e7934d7682bef07f51fa6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update post by postId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Computer\",\r\n    \"description\": \"very fast Pc\",\r\n    \"createdBy\": \"6322a81ecc2c62339d8d084f\",\r\n    \"tags\": [\"Fast\",\"Gaming\"],\r\n    \"status\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/updatepost/632d4ea18793a284d9fe515f",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"updatepost",
+								"632d4ea18793a284d9fe515f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Not good post\",\r\n    \"postId\": \"635fc237c3f7b9c6ce1c96cc\",\r\n    \"userId\": \"6350eaa155a7154b2cfa0a59\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/postreport",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"postreport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"6322a81ecc2c62339d8d085f\",\r\n    \"accountId\": \"632d4ea18793a284d9fe515f\",\r\n    \"reason\": \"Harmfull content\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/accountreport",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"accountreport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unblock post Req",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"postId\": \"632d4ea18793a284d9fe516f\",\r\n    \"accountId\":\"6322a81ecc2c62339d8d084f\",   //PostId or AccountId\r\n    \"userId\": \"6322a81ecc2c62339d8d084f\",\r\n    \"description\": \"Fake reports can you review my post\",\r\n    \"type\":\"Account\"   // Account or Post\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/unblockreq",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"unblockreq"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all user post by userId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/post/getallposts/6322a81ecc2c62339d8d084f",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"getallposts",
+								"6322a81ecc2c62339d8d084f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/post/deletepost/63231f9eee44e4438a729678",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"deletepost",
+								"63231f9eee44e4438a729678"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"Searchby\":\"\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/getallpost",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"getallpost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single Post",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/post/singlepost/632d8a24d32151c10c9170cf",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"singlepost",
+								"632d8a24d32151c10c9170cf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Like post user by postId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/post/likepost/632d4ea18793a284d9fe515f",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"likepost",
+								"632d4ea18793a284d9fe515f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Bookmark",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isBookmark\": true,\r\n    \"postId\": \"633569cb65700a29a0157bcb\",\r\n    \"userId\": \"6322a81ecc2c62339d8d084f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/bookmark",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"bookmark"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Bookmark",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/post/bookmark",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"bookmark"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Notification by userId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/user/notification/6350ea5e55a7154b2cfa0a47",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"notification",
+								"6350ea5e55a7154b2cfa0a47"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Notification",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/user/notification/635f530021401337dfd29bd4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"notification",
+								"635f530021401337dfd29bd4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/user/profile/632d7c7b76b6ebd3cad5b439",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								"632d7c7b76b6ebd3cad5b439"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/user/history",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/22051603/Downloads/DSC_0245.JPG"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/singleimage",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"singleimage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload multiple image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Auth}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/C:/Users/22051603/Pictures/Screenshots/Screenshot (2).png",
+										"/C:/Users/22051603/Pictures/Screenshots/Screenshot (3).png"
+									]
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/multipleimage",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"multipleimage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8000",
+			"type": "default"
+		},
+		{
+			"key": "Auth",
+			"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtzaGFoQGdtYWlsLmNvbSIsImZ1bGxOYW1lIjoiS2FyYW4gU2hhaCIsIl9pZCI6IjYzMjJhODFlY2MyYzYyMzM5ZDhkMDg0ZiIsImlhdCI6MTY2MzI0MjU1NH0.ejNw-yqfujoptd5UWj6aCh4C4reoI-UH9toxzMn5N0w",
+			"type": "default"
+		}
+	]
+}
