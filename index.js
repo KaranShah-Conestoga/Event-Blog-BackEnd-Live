@@ -25,7 +25,7 @@ connectDB(DATABASE_URL)
 
 const io = new Server(server, {
     cors: {
-      origin: "event-blog-front-end-live-g2rxyw3zg-karan-shahs-projects.vercel.app",
+      origin: "event-blog-back-end-live.vercel.app",
       methods: ["GET", "POST"],
     },
   });
